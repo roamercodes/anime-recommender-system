@@ -27,9 +27,44 @@ gambar 1. proyek cover
 
 ### Solution Approach
 
-Untuk mencapai tujuan proyek diatas, maka akan digunakan dua pendekatan dalam membuat sistem rekomendasi, yaitu :
-- *Content-based filtering*, yaitu pendekatan yang memberikan rekomendasi *anime* yang yang memiliki kesamaan dengan *anime* yang sedang ditonton atau dicari oleh pengguna.
-- *Collaborative filtering*, yaitu pendekatan yang memberikan rekomendasi yang berasal dari data *anime* yang disukai atau pernah ditonton oleh pengguna dan pengguna lain.
+Untuk mencapai tujuan penelitian ini akan digunakan dua pendekatan dalam membuat sistem rekomendasi, yaitu :
 
+- *Item Based Collaborative filtering*, yang bekerja dengan cara menghitung kesamaan antara masing-masing item.
+-  *Model Based Collaborative filtering*, yang mengekstrak informasi dari kumpulan data kemudian menggunakan model probabilitas untuk membuat rekomendasi.
+- *Content-based filtering*, yang mempelajari profil minat pengguna baru berdasarkan data dari objek yang telah dinilai pengguna.
 
 ## Data Understanding
+
+Data yang digunakan pada proyek ini merupakan *dataset* yang berasal dari Kaggle dengan judul [*Anime Recommendations Database*](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database). *Dataset* ini merupakan data rekomendasi dari 73516 pengguna dari website [myanimelist.net](myanimelist.net). Dataset ini berisi data preferensi dari 73516 pengguna pada 12294 *anime*. Setiap pengguna dapat menambahkan *anime* ke dalam daftar "sudah ditonton" mereka dan dapat memberikan rating pada *anime* tersebut. Dataset ini terdiri dari 2 files yaitu file anime.csv dengan total 12294 baris dan 7 kolom berisi daftar dari judul hingga rating keseluruhan anime dan file rating.csv dengan total 7813737 baris dan 3 kolom yang berisi user_id dan info dari anime yang diberi rating serta rating yang diberikan.
+
+**Anime.csv**
+
+| Variabel | Deskripsi |
+| -------- | --------- |
+| anime_id | Nomor unik mewakili judul *anime* |
+| name     | Judul anime |
+| genre    | Genre anime | 
+| type     | Jenis penayangan |
+| episodes | Episode pada anime (1 jika sebuah film) |
+| rating   | Rating rata-rata anime, dari 10-1 |
+| members  | Jumlah anggota komunitas yang bergabung pada group |
+
+**Rating.csv**
+
+| Variabel | Deskripsi |
+| -------- | --------- |
+| user_id  | Nomor unik pengguna yang dihasilkan secara acak (tidak dapat diidentifikasi) |
+| anime_id | Nomor unik mewakili anime yang pernah diberi rating oleh pengguna |
+| rating   | Nilai rating yang diberikan pengguna antara 1 sampai 10 (-1 jika pengguna sudah menonton anime tetapi tidak memberi rating) |
+
+
+
+
+
+
+
+
+
+
+
+
