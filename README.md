@@ -35,7 +35,7 @@ Untuk mencapai tujuan penelitian ini akan digunakan dua pendekatan dalam membuat
 
 ## Data Understanding
 
-Data yang digunakan pada proyek ini merupakan *dataset* yang berasal dari Kaggle dengan judul [*Anime Recommendations Database*](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database). *Dataset* ini merupakan data rekomendasi dari 73516 pengguna dari website [myanimelist.net](myanimelist.net). Dataset ini berisi data preferensi dari 73516 pengguna pada 12294 *anime*. Setiap pengguna dapat menambahkan *anime* ke dalam daftar "sudah ditonton" mereka dan dapat memberikan rating pada *anime* tersebut. Dataset ini terdiri dari 2 files yaitu file anime.csv dengan total 12294 baris dan 7 kolom berisi daftar dari judul hingga rating keseluruhan anime dan file rating.csv dengan total 7813737 baris dan 3 kolom yang berisi user_id dan info dari anime yang diberi rating serta rating yang diberikan.
+Setdata yang digunakan pada penelitian ini berasal dari situs Kaggle dengan judul [*Anime Recommendations Database*](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database). Kumpulan data ini berisi informasi data preferensi pengguna dari 73.516 pengguna di 12.294 anime. Setiap pengguna dapat menambahkan anime ke daftar lengkap mereka dan memberikannya peringkat dan kumpulan data ini adalah kompilasi dari peringkat tersebut.
 
 **Anime.csv**
 
@@ -48,6 +48,7 @@ Data yang digunakan pada proyek ini merupakan *dataset* yang berasal dari Kaggle
 | episodes | Episode pada anime (1 jika sebuah film) |
 | rating   | Rating rata-rata anime, dari 10-1 |
 | members  | Jumlah anggota komunitas yang bergabung pada group |
+
 
 **Rating.csv**
 
