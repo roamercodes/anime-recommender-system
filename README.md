@@ -73,9 +73,33 @@ Tabel 3. jumlah fitur yang akan digunakan
 
 Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv 
 
+## Data Preprocessing
+
+### Missing Value Handling
+
+Data yang berisi nilai kosong (_missing value_) atau data _outlier_ (nilai diluar normal) akan berakibat buruk pada proses pemodelan, maka dari itu perlu dilakukan penanganan terhadap data tersebut. Pada fitur `rating` tepatnya pada data `anime_rating.csv` terdapat _outlier_ yakni terdapat nilai `-1` dari _outlier_ tersebut akan diganti kan `NaN value` dengan menggunakan `built-in` _function_ dari _Numpy_ yaitu `np.Nan` maka semua data yang bernilai `-1` akan digantikan.
+
+Karena alasan keakuratan rekomendasi maka akan dilakukan penyaringan pada kumpulan data, berdasarkan Gambar 1 diketahui bahwa 3 teratas anime terbanyak ada pada tipe penayangan `TV` disusul `Ova` dan `Movie`, hanya ada dua tipe penayangan yang akan diambil yakni `TV` dan `Movie`, selain dari segi kumpulan data anime terbanyak isi konten juga perlu diperhatikan, walaupun `OVA` ada pada peringkat 2 terbanyak tipe `OVA` dipublikasikan dengan tujuan untuk memperjelas alur cerita dalam artian lain bukan bagian dari cerita inti [2]. Dengan proses penyaringan ini juga dapat mengurangi biaya komputasi yang cukup besar (ngga percaya? coba sendiri!!). 
+
 ## Data Preparation
 
+Persiapan sebelum melakukan proses _modeling_ adalah menyiapkan data yang bersih, penyortiran fitur dan tentu layak untuk digunakan. Ada perbedaam pada data yang digunakam pada *collaboarative filtering* dan *content-based filtering*, pada *collaboarative filtering* membutuhkan fitur `anime_id` `name`, `user_id` dan `rating` dimana kedua file `csv` akan digunakan sedangkan pada *content-based filtering* dibutuhkan fitur `name` dan `genre`.
 
+
+
+### *Collaborative Filtering*
+
+Pada *Collaborative Filtering* digunakan 2 dataset tersebut. Dataset akan digabungkan dengan mengacu pada kolom anime_id sehingga dikarenakan pada kedua dataset memiliki kolom anime_id tersebut. Dataset gabungan ini memiliki 7813727 baris dan 9 kolom.
+
+Setelah digabungkan kemudian akan dicek apakah terdapat kolom yang bernilai null maupun baris yang duplikat. Ternyata terdapat kolom yang bernilai null yang kemudian akan diisi dengan whitespace agar tidak terhapus saat menghapus kolom null. Kemudian kolom rating_user yang bernilai -1 akan diubah menjadi null dan akan dihapus karena, baris kolom tersebut tidak memiliki informasi yang mewakili preferensi dari pengguna.
+
+Ketika data sudah bersih dari Null value dan data duplikat kemudian akan diambil baris data yang miliki *members* pada kolom members dengan nilai lebih dari 250000. Hal ini dilakukan agar pengguna menerima rekomendasi anime yang berkualitas dan juga ditonton banyak orang. Jumlah dataset ini setelah difilter menjadi 1615445 baris dan 9 kolom. Kemudian data akan dibagi menjadi data latih dan data tes dengan rasio 90% : 10%. Data tes memiliki rasio yang lebih sedikit dikarenakan data yang tersedia cukup banyak jadi 10% data tes sudah termasuk banyak.
+
+### *Content-based Filtering*
+
+Dataset yang digunakan untuk *Content-based Filtering* adalah hanya dataset anime. Pertama dataset akan dicek apakah terdapat kolom yang bernilai null maupun baris yang duplikat. Ternyata terdapat data null pada kolom genre, type , dan rating. Kolom null tersebut tidak akan dihapus melainkan diisi dengan value whitespace karena kita membutuhkan kolom *name* dan *genre*.
+
+Setelah itu kolom genre akan kita ekstrak datanya menjadi matriks 2 dimensi untuk setiap anime dikarenakan kolom genre berisi beberapa genre dari anime tersebut. Hal ini dilakukan untuk memudahkan pemetaan genre dan anime kedalam *Term Frequency-Inverse Document Frequency (TF-IDF) Vectorizer*
 
 
 
