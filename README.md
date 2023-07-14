@@ -70,23 +70,8 @@ Tabel 3. jumlah fitur yang akan digunakan
 
 
 ![image](https://github.com/roamercodes/anime-recommender-system/assets/22432578/8d4c47fb-e206-43f8-bba1-83005d8d6e2c)
-Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv
 
-Selanjutnya pada dataset rating.csv (yang selanjutnya akan disebut dataset rating) terdapat persebaran rating dari user. Persebaran data terbanyak berada diantara nilai 7, 8, dan 9.
- 
-Tabel. 1 Data statistik kolom rating pada dataset rating
-
-|         | rating        |
-|-------- |-------------- |
-| mean    | 6.144030e+00  |
-| std     | 3.727800e+00  |
-| min     | -1.000000e+00	|
-| 25%     | 6.000000e+00	|
-| 50%     | 7.000000e+00  |
-| 75%     | 9.000000e+00  |
-| max     | 1.000000e+01	|
-
-Pada dataset rating dapat dilihat rating minimal adalah -1 dan maksimal adalah 10. data yang bernilai -1 ini merupakan nilai yang diberikan jika seorang pengguna menonton sebuah *anime* dan belum memberikan rating. Baris data ini tidak akan digunakan dan akan dihapus nanti karena, tidak memberikan informasi tentang preferensi pengguna tersebut.
+Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv 
 
 ## Data Preparation
 
