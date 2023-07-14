@@ -37,8 +37,7 @@ Untuk mencapai tujuan penelitian ini akan digunakan dua pendekatan dalam membuat
 
 Setdata yang digunakan pada penelitian ini berasal dari situs Kaggle dengan judul [*Anime Recommendations Database*](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database). Kumpulan data ini berisi informasi data preferensi pengguna dari 73.516 pengguna di 12.294 anime. Setiap pengguna dapat menambahkan anime ke daftar lengkap mereka dan memberikannya peringkat dan kumpulan data ini adalah kompilasi dari peringkat tersebut.
 
-**Anime.csv**
-
+Tabel 1. deskripsi variabel _anime.csv_
 | Variabel | Deskripsi |
 | -------- | --------- |
 | anime_id | Nomor unik mewakili judul *anime* |
@@ -49,9 +48,7 @@ Setdata yang digunakan pada penelitian ini berasal dari situs Kaggle dengan judu
 | rating   | Rating rata-rata anime, dari 10-1 |
 | members  | Jumlah anggota komunitas yang bergabung pada group |
 
-
-**Rating.csv**
-
+Tabel 2. deskripsi variabel _ratings.csv_
 | Variabel | Deskripsi |
 | -------- | --------- |
 | user_id  | Nomor unik pengguna yang dihasilkan secara acak (tidak dapat diidentifikasi) |
@@ -60,16 +57,23 @@ Setdata yang digunakan pada penelitian ini berasal dari situs Kaggle dengan judu
 
 ### Exploratory Data Analysis
 
- Pada dataset anime.csv (yang selanjutnya akan ditulis dataset anime) memiliki kolom type yang berisi data media yang digunakan untuk penayangan anime tersebut
+Pada tahap _EDA_ pertama akan dilakukan _Univariate analysis_ dimana analisis univariat merupakan teknik analisis data terhadap satu variabel secara mandiri.
+Kita akan mengeksplorasi kumpulan data pada masing-masing variable yang penting dan akan digunakan untuk pelatihan nanti.
 
- ![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/27383eab-d5bd-4879-907b-f3dfe8c986fe)
- Gambar 1. Kolom type pada dataset anime
+Tabel 3. jumlah fitur yang akan digunakan
+| Fitur    | Jumlah | Keterangan |
+| -------- | ------ | ---------- |
+| anime    | 12.294 | total anime |
+| users    | 73.515 | total pengguna |
+| rating   | 11     | 11 jenis rating |
+| genre    | 6      | 6 jenis genre |
 
- Selanjutnya pada dataset rating.csv (yang selanjutnya akan disebut dataset rating) terdapat persebaran rating dari user. Persebaran data terbanyak berada diantara nilai 7, 8, dan 9.
+
+![image](https://github.com/roamercodes/anime-recommender-system/assets/22432578/8d4c47fb-e206-43f8-bba1-83005d8d6e2c)
+Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv
+
+Selanjutnya pada dataset rating.csv (yang selanjutnya akan disebut dataset rating) terdapat persebaran rating dari user. Persebaran data terbanyak berada diantara nilai 7, 8, dan 9.
  
-![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/83c4a31c-8e90-4e89-a913-67243232872a)
- Gambar 2. Kolom rating pada dataset rating
-
 Tabel. 1 Data statistik kolom rating pada dataset rating
 
 |         | rating        |
