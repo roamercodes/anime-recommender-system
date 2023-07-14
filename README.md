@@ -58,7 +58,33 @@ Setdata yang digunakan pada penelitian ini berasal dari situs Kaggle dengan judu
 | anime_id | Nomor unik mewakili anime yang pernah diberi rating oleh pengguna |
 | rating   | Nilai rating yang diberikan pengguna antara 1 sampai 10 (-1 jika pengguna sudah menonton anime tetapi tidak memberi rating) |
 
+### Exploratory Data Analysis
 
+ Pada dataset anime.csv (yang selanjutnya akan ditulis dataset anime) memiliki kolom type yang berisi data media yang digunakan untuk penayangan anime tersebut
+
+ ![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/27383eab-d5bd-4879-907b-f3dfe8c986fe)
+ Gambar 1. Kolom type pada dataset anime
+
+ Selanjutnya pada dataset rating.csv (yang selanjutnya akan disebut dataset rating) terdapat persebaran rating dari user. Persebaran data terbanyak berada diantara nilai 7, 8, dan 9.
+ 
+![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/83c4a31c-8e90-4e89-a913-67243232872a)
+ Gambar 2. Kolom rating pada dataset rating
+
+Tabel. 1 Data statistik kolom rating pada dataset rating
+
+|         | rating        |
+|-------- |-------------- |
+| mean    | 6.144030e+00  |
+| std     | 3.727800e+00  |
+| min     | -1.000000e+00	|
+| 25%     | 6.000000e+00	|
+| 50%     | 7.000000e+00  |
+| 75%     | 9.000000e+00  |
+| max     | 1.000000e+01	|
+
+Pada dataset rating dapat dilihat rating minimal adalah -1 dan maksimal adalah 10. data yang bernilai -1 ini merupakan nilai yang diberikan jika seorang pengguna menonton sebuah *anime* dan belum memberikan rating. Baris data ini tidak akan digunakan dan akan dihapus nanti karena, tidak memberikan informasi tentang preferensi pengguna tersebut.
+
+## Data Preparation
 
 
 
