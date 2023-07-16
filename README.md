@@ -120,7 +120,7 @@ Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang m
 
 Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_.
 
-$$ sim(k,i) = \sum_{u=1}^m (R_{u, k}-\overline{R_{k}}) (R_{u, k}-\overline{R_{i}}) $$
+$$ sim(k,i) = \sum_{u=1}^m (R_{u, k}-\overline{R_{k}}) (R_{u, i}-\overline{R_{i}}) \over \sqrt \sum_{u=1}^m (R_{u, k}-\overline{R_{k}})  $$
 
 $\sum_{i=1}^n$.
  
