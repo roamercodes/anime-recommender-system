@@ -101,7 +101,7 @@ Pada persiapan data untuk _model based collaborative filtering_ juga menggunakan
 
 Tahapan pada persiapan data untuk _model based collaborative filtering)_ ialah:
 
-- Memangkas data berdasarkan `member` lebih dari 300.000
+- Memangkas data berdasarkan `members` lebih dari 300.000
 - _Splitting_ atau pemisahan data latih dan data validasi dengan komposisi 80:20.
 
 ### *Content-based Filtering*
@@ -113,6 +113,15 @@ Pada perisiapan data untuk _content based filtering_ dibutuhkan hasil derajat ke
 Berdasarkan latar belakang domain proyek telah dijelaskan bawwa pada penelitian ini menggunakan 3 metode pendekatan dalam membuat sistem rekomendasi anime.
 
 ### *Memory Based | Item Based Collaborative Filtering*
+
+Pendekatan dengan _item based collaborative filtering_ memberikan rekomendasi berdasarkan kemiripan antar item. Pada pendekatan ini didasari atas adanya kemiripan antara pemberian rating terhadap suatu item dengan item yang pernah dirating pengguna lain. Item yang telah dirating oleh pengguna akan menjadi patokan untuk mencari item lainnya yang berkorelasi dengan item yang telah dirating pengguna.
+
+Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang mudah, mudah menambahkan data-data baru tidak perlu menpertimbangkan content item yang direkomendasikan, skala yang baik dengan co-rated item sedangkan kekurangan _item based collaborative filtering_ adalah adalah algoritma ini bergantung pada rating dari pengguna, menurun-nya performa jika data jarang, skalabilitas yang terbatas pada dataset yang besar [3].
+
+Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_.
+
+$$ sim(k,i) = \sum_{u=1}^m \over {||A|| ||B||}} $$
+
 
 
 
