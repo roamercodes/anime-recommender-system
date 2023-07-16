@@ -118,11 +118,11 @@ Pendekatan dengan _item based collaborative filtering_ memberikan rekomendasi be
 
 Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang mudah, mudah menambahkan data-data baru tidak perlu menpertimbangkan content item yang direkomendasikan, skala yang baik dengan co-rated item sedangkan kekurangan _item based collaborative filtering_ adalah adalah algoritma ini bergantung pada rating dari pengguna, menurun-nya performa jika data jarang, skalabilitas yang terbatas pada dataset yang besar [3].
 
-Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_.
+Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_. erikut ini adalah persamaan metode pearson correlation-based similarity:
 
-$$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, i}-\overline{R_{i}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, i}-\overline{R_{i}})^{2}} $$
- 
-$\sum_{x = a}^{b} f(x)$
+$$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
+
+Dimana `sim(k,l)` adalah nilai _similarity_ antara `item k` dan `item l`, `$\overline{R_{k}$` dan `$\overline{R_{l}$` adalah rating rata-rata pada `item k` dan `item l`,  `$(R_{u, k}$` dan `$(R_{u, l}$` adalah rating oleh pengguna `u` kepada `item k` dan `item l` dan `m` adalah jumlah total pengguna.
 
 
 
