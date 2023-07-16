@@ -122,7 +122,7 @@ Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adala
 
 $$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
 
-Dimana $sim(k,l)$ adalah nilai _similarity_ antara `item k` dan `item l`, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada `item k` dan `item l`, $(R_{u, k}$ dan $(R_{u, l}$ adalah rating oleh pengguna `u` kepada `item k` dan `item l` dan `m` adalah jumlah total pengguna.
+Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna.
 
 
 
