@@ -83,22 +83,36 @@ Karena alasan keakuratan rekomendasi maka akan dilakukan penyaringan pada kumpul
 
 ## Data Preparation
 
-Ada perbedaan pada data yang digunakam pada *collaboarative filtering* dan *content-based filtering*, pada *collaboarative filtering* membutuhkan fitur `anime_id` `name`, `user_id` dan `rating` dimana kedua file `csv` akan digunakan sedangkan pada *content-based filtering* dibutuhkan fitur `name` dan `genre`.
+Ada perbedaan pada data yang digunakam pada *collaboarative filtering* dan *content-based filtering*, pada *collaboarative filtering* membutuhkan fitur `anime_id` `name`, `user_id` dan `rating` dimana kedua file `csv` akan digunakan sedangkan pada *content-based filtering* dibutuhkan fitur `name`, `genre` dan hasil perhitungan `cosine similarity`.
 
-### *Collaborative Filtering*
+### *Memory Based | Item Based Collaborative Filtering*
 
-Pada *Collaborative Filtering* digunakan 2 dataset tersebut. Dataset akan digabungkan dengan mengacu pada kolom anime_id sehingga dikarenakan pada kedua dataset memiliki kolom anime_id tersebut. Dataset gabungan ini memiliki 7813727 baris dan 9 kolom.
+Pada *Item Based Collaborative Filtering* menggunakan dua kumpulan data dan digabung.
+Tahapan pada persiapan data untuk _IBCF (item based collaborative Filtering)_ ialah:
 
-Setelah digabungkan kemudian akan dicek apakah terdapat kolom yang bernilai null maupun baris yang duplikat. Ternyata terdapat kolom yang bernilai null yang kemudian akan diisi dengan whitespace agar tidak terhapus saat menghapus kolom null. Kemudian kolom rating_user yang bernilai -1 akan diubah menjadi null dan akan dihapus karena, baris kolom tersebut tidak memiliki informasi yang mewakili preferensi dari pengguna.
+- Menghirung skor _item similiarity_ berdasarkan semua rating pengguna.
+- Mengidentifikasi item teratas yang paling mirip dengan item yang diminati.
+- Menghitung skor rata-rata untuk item yang paling mirip oleh pengguna.
+- Memberi rating item berdasarkan skor dan item teratas untuk direkomendasikan.
 
-Ketika data sudah bersih dari Null value dan data duplikat kemudian akan diambil baris data yang miliki *members* pada kolom members dengan nilai lebih dari 250000. Hal ini dilakukan agar pengguna menerima rekomendasi anime yang berkualitas dan juga ditonton banyak orang. Jumlah dataset ini setelah difilter menjadi 1615445 baris dan 9 kolom. Kemudian data akan dibagi menjadi data latih dan data tes dengan rasio 90% : 10%. Data tes memiliki rasio yang lebih sedikit dikarenakan data yang tersedia cukup banyak jadi 10% data tes sudah termasuk banyak.
+### *Model Based | Collaborative Filtering*
+
+Pada persiapan data untuk _model based collaborative filtering_ juga menggunakan kedua file csv. Namun ada pemangkasan data cukup banyak pada data yang akan digunakan untuk model ini karena keterbatasan komputasi yang dimiliki. Pada persiapan data untuk semua model, total jumlah data adalah 6.271.201 kemudian dilakukan penyortiran data berdasarkan `members` yang lebih dari 300.000, sehingga hasil total data menjadi 1.521.935 baris.
+
+Tahapan pada persiapan data untuk _model based collaborative filtering)_ ialah:
+
+- Memangkas data berdasarkan `member` lebih dari 300.000
+- _Splitting_ atau pemisahan data latih dan data validasi dengan komposisi 80:20.
 
 ### *Content-based Filtering*
 
-Dataset yang digunakan untuk *Content-based Filtering* adalah hanya dataset anime. Pertama dataset akan dicek apakah terdapat kolom yang bernilai null maupun baris yang duplikat. Ternyata terdapat data null pada kolom genre, type , dan rating. Kolom null tersebut tidak akan dihapus melainkan diisi dengan value whitespace karena kita membutuhkan kolom *name* dan *genre*.
+Pada perisiapan data untuk _content based filtering_ dibutuhkan hasil derajat kesamaan dengan teknik _cosine similarity_, karena sebelumnya pada model _IBCF_ juga menghitung _cosine similarity_ maka hasil tersebut akan digunakan juga pada model ini.
 
-Setelah itu kolom genre akan kita ekstrak datanya menjadi matriks 2 dimensi untuk setiap anime dikarenakan kolom genre berisi beberapa genre dari anime tersebut. Hal ini dilakukan untuk memudahkan pemetaan genre dan anime kedalam *Term Frequency-Inverse Document Frequency (TF-IDF) Vectorizer*
+## Modeling
 
+Berdasarkan latar belakang domain proyek telah dijelaskan bawwa pada penelitian ini menggunakan 3 metode pendekatan dalam membuat sistem rekomendasi anime.
+
+### *Memory Based | Item Based Collaborative Filtering*
 
 
 
