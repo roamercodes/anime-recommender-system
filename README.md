@@ -122,12 +122,10 @@ Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adala
 
 $$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
 
-Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna.
-Hasil perhitungan _cosine similarity_ menjadi dasar dalam pemberian rekomendasi kepada pengguna.
+Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna. Hasil perhitungan _cosine similarity_ menjadi dasar dalam pemberian rekomendasi kepada pengguna.
+Tabel 4 dibawah ini merupakan hasil uji terhadap pengguna dengan id 101, dimana ada 5 top rekomendasi anime yang telah diurutkan berdasarkan prediksi rating tertinggi.
 
-Tabel 4. menunjukkan hasil rekomendasi dalam bentuk Top 5 rekomendasi film untuk film yang berjudul "Jumanji (1995)" dengan genre Adventure, Children, dan Fantasy.
-
-Tabel 4. Sampel hasil top 5 rekomendasi anime dengan _Item Based Collaborative Filtering_
+Tabel 4. Sampel hasil uji top 5 rekomendasi anime dengan _Item Based Collaborative Filtering_
  
 | Anime          | Rating  |
 | -------------- | ------- |
@@ -138,5 +136,29 @@ Tabel 4. Sampel hasil top 5 rekomendasi anime dengan _Item Based Collaborative F
 | Omae Umasou da na | 3.15765 |
 
 
+### *Model Based Collaborative Filtering*
+
+Pada model dengan pendekatan _Collaborative Filtering_ lebih tepatnya _model based_ menggunakan arsitektur model _RecommenderNet_ yang dibangun menggunakan pustaka _TensorFlow_. Model ini menghitung skor kecocokan antara pengguna dan anime dengan teknik _embedding_, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_.
+
+Perbedaan pendekatan ini dengan content-based filtering adalah adanya pola preferensi pengguna yang dapat diprediksi, sehingga pengguna akan mendapatkan rekomendasi berdasarkan anime yang disukainya.
+
+Kelebihan dari Collaborative Filtering ini adalah kemampuannya dalam menemukan pola preferensi pelanggan yang kompleks dan merekomendasikan produk berdasarkan preferensi serupa dari pelanggan lain. Namun kekurangan dari pendekatan ini adalah adanya masalah jika pelanggan baru atau produk baru tidak memiliki cukup interaksi untuk memberikan rekomendasi yang akurat.
+
+Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah pengguna tonton dan diberi rating.
+
+Tabel 5. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _model based collaborative filtering_
+
+| No. | name                                                    | genre                                                         |
+| --- | ------------------------------------------------------- | --------------------------------------------------------------|
+|  1  | Tengen Toppa Gurren Lagann                              | Action, Adventure, Comedy, Mecha, Sci-Fi                      |
+|  2  | Toradora!                                               | Comedy, Romance, School, Slice of Life                        |
+|  3  | Sen to Chihiro no Kamikakushi                           | Adventure, Drama, Supernatural                                |
+|  4  | Fullmetal Alchemist: Brotherhood                        | Action, Adventure, Drama, Fantasy, Magic, Military, Shounen   |
+|  5  | Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai | Drama, Slice of Life, Supernatural                            |
+|  6  | Gintama                                                 | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen  |
+|  7  | Shigatsu wa Kimi no Uso                                 | Drama, Music, Romance, School, Shounen                        |
+|  8  | Clannad: After Story                                    | Drama, Fantasy, Romance, Slice of Life, Supernatural          |
+|  9  | Mononoke Hime                                           | Action, Adventure, Fantasy                                    |
+|  10 | Cowboy Bebop                                            | Action, Adventure, Comedy, Drama, Sci-Fi, Space               |
 
 
