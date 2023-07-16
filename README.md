@@ -118,12 +118,24 @@ Pendekatan dengan _item based collaborative filtering_ memberikan rekomendasi be
 
 Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang mudah, mudah menambahkan data-data baru tidak perlu menpertimbangkan content item yang direkomendasikan, skala yang baik dengan co-rated item sedangkan kekurangan _item based collaborative filtering_ adalah adalah algoritma ini bergantung pada rating dari pengguna, menurun-nya performa jika data jarang, skalabilitas yang terbatas pada dataset yang besar [3].
 
-Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_. erikut ini adalah persamaan metode pearson correlation-based similarity:
+Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_ [4]. Berikut ini adalah persamaan metode _pearson correlation similarity_:
 
 $$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
 
 Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna.
+Hasil perhitungan _cosine similarity_ menjadi dasar dalam pemberian rekomendasi kepada pengguna.
 
+Tabel 4. menunjukkan hasil rekomendasi dalam bentuk Top 5 rekomendasi film untuk film yang berjudul "Jumanji (1995)" dengan genre Adventure, Children, dan Fantasy.
+
+Tabel 4. Sampel hasil top 5 rekomendasi anime dengan _Item Based Collaborative Filtering_
+ 
+| Anime          | Rating  |
+| -------------- | ------- |
+| Eikyuu Kazoku  | 3.232782 |
+| Cutey Honey    | 3.192767 |
+| Samurai Gun    | 3.170783 |
+| Kujira no Chouyaku | 3.162018 |
+| Omae Umasou da na | 3.15765 |
 
 
 
