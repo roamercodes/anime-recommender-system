@@ -122,7 +122,7 @@ Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adala
 
 $$ sim(k,i) = \sum_{u=1}^m (R_{u, k}-\overline{R_{k}}) (R_{u, i}-\overline{R_{i}}) \over {\sqrt \sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2}} {\sqrt \sum_{u=1}^m (R_{u, i}-\overline{R_{i}})^{2}} $$
 
-$$ sim(k,i) = \frac{\sum_{u=1}^m (R_{u, k}-\overline{R_{k}}) (R_{u, i}-\overline{R_{i}})} {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, i}-\overline{R_{i}})^{2}} $$
+$$ sim(k,i) = \frac{ {\sum_{u=1}^m} (R_{u, k}-\overline{R_{k}}) (R_{u, i}-\overline{R_{i}})} {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, i}-\overline{R_{i}})^{2}} $$
  
 $$ cosine similarity = {{A . B} \over {||A|| ||B||}} $$
 
