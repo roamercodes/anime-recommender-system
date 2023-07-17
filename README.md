@@ -188,9 +188,10 @@ Metriks evaluasi yang akan digunakan pada metode ini yaitu _MAE_ dimana _mean ab
 
 $$ MAE = \frac{\sum_{u = 1}^n {(P_{u, k})} {(R_{u, k})} } {n} $$
 
-Berdasarkan hasil uji pada tabel 4 diperoleh hasil _MSE_
- 
+Dimana $P_{u, k}$ adalah Prediksi rating pengguna _u_ untuk _item k_, $R_{u, k}$ adalah Nilai rating yang diberikan pengguna _u_ untuk _item k_, dan _N_ adalah Jumlah data.
 
+Disini akan mencoba mengevaluasi terhadap user yang telah menonton sebuah anime dan melihat hasi prediksi ratingnya. Berdasarkan hasil uji pada tabel 4 yang menggunakan id pengguna yaitu `101` bahwa pengguna tersebut telah menonton dan merating anime `Naruto` dengan rating 3.279614 kemudian hasil skor kemiripan yang didapat adalah 1.000000 dan mendapatkan hasil prediksi rating yakni 3.136683.
+Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MSE_ sebesar 0.14293099999999992.
 
 ### *Content Based Filtering*
 * Untuk Metriks yang di gunakan pada content based filtering adalah menggunakan precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
