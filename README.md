@@ -200,7 +200,7 @@ Pada pendekatan dengan metode ini metriks evaluasi yang di gunakan ialah _RMSE (
 | $$RMSE = \sqrt {\frac{1}{N} \sum_{i=1}^{N} (\hat{y_{i}} - y_{i})^2}$$ |
 | --------------------------------------------------------------------- |
 
-dimana $$\hat{y}$$  merupakan rating prediksi _y_ merupakan rating aktual dan _n_ merupakan jumlah data.
+dimana $\hat{y}$ merupakan rating prediksi _y_ merupakan rating aktual dan _n_ merupakan jumlah data.
 
 ![RMSE PLOT](https://github.com/roamercodes/anime-recommender-system/assets/22432578/67a86cde-49df-42bb-bc40-6ddbbab14ffc)
 
@@ -234,25 +234,34 @@ Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _r
 | $$F1 = \frac {2   x   Recall   x   Precision} { Recall + Precision }$$ |
 | ---------------------------------------------------------------------- |
 
-Apabila di implementasikan maka :
+Apabila dilakukan implementasi maka :
 
-Precision (Presisi):
+_Precision_:
 
 | $$\text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
-Recall (Recall):
+_Recall_:
 
 | $$\text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
-Accuracy (Akurasi):
+_Accuracy_:
 
 | $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$  |
 | ----------------------------------------------------------------------------------------------------------------------------- |
 
-
 ## Conclusion
 
 Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem rekomendasi anime menggunakan 3 metode pendekatan yang berbeda. Pada model pertama yaitu _item based collaborative filtering_ mendapatkan nilai _MAE_ sebesar 0.1429 dan pada model yang kedua yaitu _model based collaborative filtering_ mendapatkan nilai _RMSE_ sebesar 0.2051 dan pada model yang terakhir yakni _content based filtering_ mendapatkan hasil akurasi 100%. Dari sedikit tinjauan tersebut maka dalam proyek ini dirasa telah mendapatkan hasil yang sesuai ekspetasi walaupun masih belum maksimal dalam proses pelatihan ataupun proses pemilihan dan penyaringan fitur.
+
+## Daftar Pustaka
+
+[1]	Iklil jayaperwira, Agung Toto Wibowo, and Dade Nurjanah, “Anime Rekomendasi Menggunakan Collaborative Filtering,” E-Proceeding Eng., vol. 3, pp. 3431–3440, 2023.
+[2]	U. S. & T. KOMPUTER, “Video animasi orisinal.” https://p2k.stekom.ac.id/ensiklopedia/Video_animasi_orisinal (accessed Jul. 14, 2023).
+[3]	E. A. Laksana, “COLLABORATIVE FILTERING DAN APLIKASINYA,” J. Ilm. Teknol. Infomasi Terap., vol. 1, no. 1, Art. no. 1, Dec. 2014, doi: 10.33197/jitter.vol1.iss1.2014.44.
+[4]	B. Prasetyo, H. Haryanto, S. Astuti, E. Z. Astuti, and Y. Rahayu, “Implementasi Metode Item-Based Collaborative Filtering dalam Pemberian Rekomendasi Calon Pembeli Aksesoris Smartphone,” J. Eksplora Inform., vol. 9, no. 1, Art. no. 1, Sep. 2019, doi: 10.30864/eksplora.v9i1.244.
+[5]	“Sistem Rekomendasi Film Menggunakan Metode Hybrid Collaborative Filtering Dan Content-based Filtering | Arfisko | eProceedings of Engineering.” https://openlibrarypublications.telkomuniversity.ac.id/index.php/engineering/article/view/18066 (accessed Jul. 17, 2023).
+[6]	A. E. Wijaya and D. Alfian, “SISTEM REKOMENDASI LAPTOP MENGGUNAKAN COLLABORATIVE FILTERING DAN CONTENT-BASED FILTERING”.
+[7]	A. S. Dharma, R. B. B. A. Hutasoit, and R. R. Pangaribuan, “Sistem Rekomendasi Menggunakan Item-based Collaborative Filtering pada Konten Artikel Berita,” J. Nas. Tek. Inform. Dan Elektro JURNALTIO, vol. 2, no. 01, Art. no. 01, Apr. 2021.
 
