@@ -138,10 +138,7 @@ Tabel 4. Sampel hasil uji top 5 rekomendasi anime dengan _Item Based Collaborati
 
 ### *Model Based Collaborative Filtering*
 
-Pada model dengan pendekatan _Collaborative Filtering_ lebih tepatnya _model based_ menggunakan arsitektur model _RecommenderNet_ yang dibangun menggunakan pustaka _TensorFlow_. Model ini menghitung skor kecocokan antara pengguna dan anime dengan teknik _embedding_, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_.
-
-Perbedaan pendekatan ini dengan content-based filtering adalah adanya pola preferensi pengguna yang dapat diprediksi, sehingga pengguna akan mendapatkan rekomendasi berdasarkan anime yang disukainya.
-
+Pada model dengan pendekatan _Collaborative Filtering_ lebih tepatnya _model based_ menggunakan arsitektur model _RecommenderNet_ yang dibangun menggunakan pustaka _TensorFlow_. Model ini menghitung skor kecocokan antara pengguna dan anime dengan teknik _embedding_, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_. Perbedaan pendekatan ini dengan content-based filtering adalah adanya pola preferensi pengguna yang dapat diprediksi, sehingga pengguna akan mendapatkan rekomendasi berdasarkan anime yang disukainya.
 Kelebihan dari Collaborative Filtering ini adalah kemampuannya dalam menemukan pola preferensi pelanggan yang kompleks dan merekomendasikan produk berdasarkan preferensi serupa dari pelanggan lain. Namun kekurangan dari pendekatan ini adalah adanya masalah jika pelanggan baru atau produk baru tidak memiliki cukup interaksi untuk memberikan rekomendasi yang akurat.
 
 Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah pengguna tonton dan diberi rating.
@@ -160,5 +157,12 @@ Tabel 5. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _model based
 |  8  | Clannad: After Story                                    | Drama, Fantasy, Romance, Slice of Life, Supernatural          |
 |  9  | Mononoke Hime                                           | Action, Adventure, Fantasy                                    |
 |  10 | Cowboy Bebop                                            | Action, Adventure, Comedy, Drama, Sci-Fi, Space               |
+
+
+### *Content Based Filtering*
+
+Metode _content based filtering_ bekerja dengan menggunakan informasi profil preferensi pengguna terhadap item untuk dicari item yang mirip sebagai hasil rekomendasi. Salah satu pendekatan dalam membangun dengan metode ini dalah membuat profil pengguna dan item menggunakan konten yang telah diberi nilai. Pendekatan ini sebagian besar dirancang untuk merekomendasikan item berbasis teks, sehingga dapat berupa genre [5].
+
+
 
 
