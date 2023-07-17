@@ -191,11 +191,28 @@ $$ MAE = \frac{\sum_{u = 1}^n {(P_{u, k})} {(R_{u, k})} } {n} $$
 Dimana $P_{u, k}$ adalah Prediksi rating pengguna _u_ untuk _item k_, $R_{u, k}$ adalah Nilai rating yang diberikan pengguna _u_ untuk _item k_, dan _N_ adalah Jumlah data.
 
 Disini akan mencoba mengevaluasi terhadap user yang telah menonton sebuah anime dan melihat hasi prediksi ratingnya. Berdasarkan hasil uji pada tabel 4 yang menggunakan id pengguna yaitu `101` bahwa pengguna tersebut telah menonton dan merating anime `Naruto` dengan rating 3.279614 kemudian hasil skor kemiripan yang didapat adalah 1.000000 dan mendapatkan hasil prediksi rating yakni 3.136683.
-Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MSE_ sebesar 0.14293099999999992.
+Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MAE_ sebesar 0.1429.
+
+### *Model Based Collaborative Filtering*
+
+Pada pendekatan dengan metode ini metriks evaluasi yang di gunakan ialah _RMSE (Root Mean Squared Error)_. _Error_ diperoleh berdasarkan nilai selisih antara hasil prediksi item terhadap data. Hasil dari perhitungan _RMSE_ terkecil berarti baik, semakin kecil nilai _RMSE_ yang di dapat maka kualitas akurasi rekomendasi semakin baik [7].
+
+| $$RMSE = \sqrt {\frac{1}{N} \sum_{i=1}^{N} (\hat{y_{i}} - y_{i})^2}$$ |
+| --------------------------------------------------------------------- |
+
+dimana $$\hat{y}$$  merupakan rating prediksi _y_ merupakan rating aktual dan _n_ merupakan jumlah data.
+
+![RMSE PLOT](https://github.com/roamercodes/anime-recommender-system/assets/22432578/67a86cde-49df-42bb-bc40-6ddbbab14ffc)
+
+Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
+
+Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan prroses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jiika merujuk pada hasil visualisasi hasil _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
 
 ### *Content Based Filtering*
 
 Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
+
+Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _recall_ dan _accuracy_ yang dapat dihitung dengan menggunakan rumus seperti dibawah ini :
 
 - Akurasi adalah hasil prediksi yang benar dari keseluruhan data uji.
 
@@ -222,17 +239,20 @@ Apabila di implementasikan maka :
 Precision (Presisi):
 
 | $$\text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
-| --------------------------------------------------------------------------------------- |
+| -------------------------------------------------------------------------------------- |
 
 Recall (Recall):
 
 | $$\text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
-
 Accuracy (Akurasi):
 
-| $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$ |
-| -------------------------------------------------------------------------------------------------------------------------------- |
+| $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$  |
+| ----------------------------------------------------------------------------------------------------------------------------- |
 
-Sehingga dari hasil evaluasi model mendapatkan hasil dengan akurasi, precision dan recall sebesar 100% yang mana system bekerja sangat baik dalam memberikan rekomendasi buku
+
+## Conclusion
+
+Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem rekomendasi anime menggunakan 3 metode pendekatan yang berbeda. Pada model pertama yaitu _item based collaborative filtering_ mendapatkan nilai _MAE_ sebesar 0.1429 dan pada model yang kedua yaitu _model based collaborative filtering_ mendapatkan nilai _RMSE_ sebesar 0.2051 dan pada model yang terakhir yakni _content based filtering_ mendapatkan hasil akurasi 100%. Dari sedikit tinjauan tersebut maka dalam proyek ini dirasa telah mendapatkan hasil yang sesuai ekspetasi walaupun masih belum maksimal dalam proses pelatihan ataupun proses pemilihan dan penyaringan fitur.
+
