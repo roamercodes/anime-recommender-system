@@ -68,7 +68,6 @@ Tabel 3. jumlah fitur yang akan digunakan
 | rating   | 11     | 11 jenis rating |
 | genre    | 6      | 6 jenis genre |
 
-
 ![image](https://github.com/roamercodes/anime-recommender-system/assets/22432578/8d4c47fb-e206-43f8-bba1-83005d8d6e2c)
 
 Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv 
@@ -258,10 +257,16 @@ Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem re
 ## Daftar Pustaka
 
 [1]	Iklil jayaperwira, Agung Toto Wibowo, and Dade Nurjanah, “Anime Rekomendasi Menggunakan Collaborative Filtering,” E-Proceeding Eng., vol. 3, pp. 3431–3440, 2023.
+
 [2]	U. S. & T. KOMPUTER, “Video animasi orisinal.” https://p2k.stekom.ac.id/ensiklopedia/Video_animasi_orisinal (accessed Jul. 14, 2023).
+
 [3]	E. A. Laksana, “COLLABORATIVE FILTERING DAN APLIKASINYA,” J. Ilm. Teknol. Infomasi Terap., vol. 1, no. 1, Art. no. 1, Dec. 2014, doi: 10.33197/jitter.vol1.iss1.2014.44.
+
 [4]	B. Prasetyo, H. Haryanto, S. Astuti, E. Z. Astuti, and Y. Rahayu, “Implementasi Metode Item-Based Collaborative Filtering dalam Pemberian Rekomendasi Calon Pembeli Aksesoris Smartphone,” J. Eksplora Inform., vol. 9, no. 1, Art. no. 1, Sep. 2019, doi: 10.30864/eksplora.v9i1.244.
+
 [5]	“Sistem Rekomendasi Film Menggunakan Metode Hybrid Collaborative Filtering Dan Content-based Filtering | Arfisko | eProceedings of Engineering.” https://openlibrarypublications.telkomuniversity.ac.id/index.php/engineering/article/view/18066 (accessed Jul. 17, 2023).
+
 [6]	A. E. Wijaya and D. Alfian, “SISTEM REKOMENDASI LAPTOP MENGGUNAKAN COLLABORATIVE FILTERING DAN CONTENT-BASED FILTERING”.
+
 [7]	A. S. Dharma, R. B. B. A. Hutasoit, and R. R. Pangaribuan, “Sistem Rekomendasi Menggunakan Item-based Collaborative Filtering pada Konten Artikel Berita,” J. Nas. Tek. Inform. Dan Elektro JURNALTIO, vol. 2, no. 01, Art. no. 01, Apr. 2021.
 
