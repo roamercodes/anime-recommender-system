@@ -181,7 +181,11 @@ Tabel 6. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _content bas
 |  10 | Robin Hood no Daibouken                                 | Adventure, Historical, Romance                    | TV    |  7.25  |
 
 ## Evaluation
-Evaluasi berguna untuk mengukur seberapa baik kinerja model pada tahap pengujian, Pada model  
+Evaluasi berguna untuk mengukur seberapa baik kinerja model pada tahap pengujian, hasil evaluasi pada masing-masing model akan dijelaskan seperti dibawah ini:
+
+### *Memory Based | Item Based Collaborative Filtering*
+
+
 
 `Presisi` Merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan hasil yang diprediksi positif. Dalam konteks proyek ini, presisi mengukur seberapa baik model dalam memberikan rekomendasi anime dengan genre yang sama.
 
