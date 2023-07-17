@@ -194,38 +194,45 @@ Disini akan mencoba mengevaluasi terhadap user yang telah menonton sebuah anime 
 Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MSE_ sebesar 0.14293099999999992.
 
 ### *Content Based Filtering*
-* Untuk Metriks yang di gunakan pada content based filtering adalah menggunakan precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
 
-$$ \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} $$
+Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
 
-$$ \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}} $$
+- Akurasi adalah hasil prediksi yang benar dari keseluruhan data uji.
 
-$$ \text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{True Positives} + \text{True Negatives} + \text{False Positives} + \text{False Negatives}} $$
+| $$Accuracy = \frac {TP + TN} { TP + FP + FN + TN }$$ |
+| ---------------------------------------------------- |
 
-Dimana 
+- Presisi adalah prediksi rasio TP dibanding keseluruhan prediksi positif.
 
-True Positives (TP) = jumlah prediksi yang benar positif 
-False Positives (FP) = jumlah prediksi yang salah positif
-False Negatives (FN) = jumlah prediksi yang salah negatif
-True Negatives (TN) = jumlah prediksi yang benar negatif
+| $$Precision = \frac {TP} { TP + FP }$$ |
+| -------------------------------------- |
 
-* Recall mengukur sejauh mana model atau sistem mampu mengidentifikasi keseluruhan jumlah data positif yang sebenarnya. Tujuan dari recall adalah untuk meminimalkan jumlah false negatives (data positif yang salah diklasifikasikan sebagai negatif).
-* Precision mengukur sejauh mana prediksi positif yang dibuat oleh model atau sistem adalah benar. Tujuan dari precision adalah untuk meminimalkan jumlah false positives (data negatif yang salah diklasifikasikan sebagai positif).
-* Accuracy mengukur sejauh mana model atau sistem mampu memberikan prediksi yang benar secara keseluruhan. Tujuan dari accuracy adalah untuk memberikan gambaran umum tentang seberapa baik model atau sistem dalam melakukan klasifikasi secara keseluruhan.
-* Hasil pada model adalah berhasil memprediksikan seluruhnya dengan benar dimana book author yang Dean R. Koontz dimana hasilnya sama dengan book author yang ada pada input sebelumnya.
+- Recall adalah prediksi rasio TP dibanding keseluruhan data yang benar.
 
-Sehingga apabila kita implementasikan pada rumus maka :
+| $$Recall = \frac {TP} {TP + FN }$$ |
+| ---------------------------------- |
+  
+- F1-score adalah perbandingan sebuah rata-rata presisi dan recall.
+
+| $$F1 = \frac {2   x   Recall   x   Precision} { Recall + Precision }$$ |
+| ---------------------------------------------------------------------- |
+
+Apabila di implementasikan maka :
 
 Precision (Presisi):
 
-$$  \text{{Precision}} = \frac{{\text{{5}}}}{{\text{{5}} + \text{{0}}}} = \text{{1}} $$
+| $$  \text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}} $$ |
+| --------------------------------------------------------------------------------------- |
 
 Recall (Recall):
 
-$$  \text{{Recall}} = \frac{{\text{{5}}}}{{\text{{5}} + \text{{0}}}} = \text{{1}}  $$
+| $$  \text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}  $$ |
+| -------------------------------------------------------------------------------------- |
+
 
 Accuracy (Akurasi):
 
-$$  \text{{Accuracy}} = \frac{{\text{{5}} + \text{{0}}}}{{\text{{5}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}  $$
+| $$  \text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}  $$ |
+| -------------------------------------------------------------------------------------------------------------------------------- |
 
-* Sehingga dari hasil evaluasi model mendapatkan hasil dengan akurasi, precision dan recall sebesar 100% yang mana system bekerja sangat baik dalam memberikan rekomendasi buku
+Sehingga dari hasil evaluasi model mendapatkan hasil dengan akurasi, precision dan recall sebesar 100% yang mana system bekerja sangat baik dalam memberikan rekomendasi buku
