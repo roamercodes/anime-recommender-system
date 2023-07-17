@@ -221,18 +221,18 @@ Apabila di implementasikan maka :
 
 Precision (Presisi):
 
-| $$  \text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}} $$ |
+| $$\text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | --------------------------------------------------------------------------------------- |
 
 Recall (Recall):
 
-| $$  \text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}  $$ |
+| $$\text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 
 Accuracy (Akurasi):
 
-| $$  \text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}  $$ |
+| $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------------------------------------------------- |
 
 Sehingga dari hasil evaluasi model mendapatkan hasil dengan akurasi, precision dan recall sebesar 100% yang mana system bekerja sangat baik dalam memberikan rekomendasi buku
