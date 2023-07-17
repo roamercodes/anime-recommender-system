@@ -118,7 +118,7 @@ Pendekatan dengan _item based collaborative filtering_ memberikan rekomendasi be
 
 Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang mudah, mudah menambahkan data-data baru tidak perlu menpertimbangkan content item yang direkomendasikan, skala yang baik dengan co-rated item sedangkan kekurangan _item based collaborative filtering_ adalah adalah algoritma ini bergantung pada rating dari pengguna, menurun-nya performa jika data jarang, skalabilitas yang terbatas pada dataset yang besar [3].
 
-Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai _cosine similarity_ menggunakan metode _Pearson correlation_ [4]. Berikut ini adalah persamaan metode _pearson correlation similarity_:
+Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai skor kemiripan menggunakan metode _Pearson correlation_ [4]. Berikut ini adalah persamaan metode _pearson correlation similarity_:
 
 $$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
 
@@ -127,14 +127,13 @@ Tabel 4 dibawah ini merupakan hasil uji terhadap pengguna dengan id 101, dimana 
 
 Tabel 4. Sampel hasil uji top 5 rekomendasi anime dengan _Item Based Collaborative Filtering_
  
-| Anime          | Rating  |
-| -------------- | ------- |
-| Eikyuu Kazoku  | 3.232782 |
-| Cutey Honey    | 3.192767 |
-| Samurai Gun    | 3.170783 |
+| Anime              | Rating   |
+| ------------------ | -------- |
+| Eikyuu Kazoku      | 3.232782 |
+| Cutey Honey        | 3.192767 |
+| Samurai Gun        | 3.170783 |
 | Kujira no Chouyaku | 3.162018 |
-| Omae Umasou da na | 3.15765 |
-
+| Omae Umasou da na  | 3.15765  |
 
 ### *Model Based Collaborative Filtering*
 
@@ -185,8 +184,47 @@ Evaluasi berguna untuk mengukur seberapa baik kinerja model pada tahap pengujian
 
 ### *Memory Based | Item Based Collaborative Filtering*
 
+Metriks evaluasi yang akan digunakan pada metode ini yaitu _MAE_ dimana _mean absolute error (MAE)_ mengitung rata-rata dari _error_ yang di absolutkan. Dimana _error_ merupakan selisih dari nilai rating sebenarnya dengan nilai rating hasil prediksi. Persamaan ini termasuk jenis _statistical accuracy metrics_ dimana MAE akan menghitung nilai rata-rata selisih Antara nilai prediksi dengan nilai yang sebenarnya [5].
+
+$$ MAE = \frac{\sum_{u = 1}^n {(P_{u, k})} {(R_{u, k})} } {n} $$
+
+Berdasarkan hasil uji pada tabel 4 diperoleh hasil _MSE_
+ 
 
 
-`Presisi` Merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan hasil yang diprediksi positif. Dalam konteks proyek ini, presisi mengukur seberapa baik model dalam memberikan rekomendasi anime dengan genre yang sama.
+### *Content Based Filtering*
+* Untuk Metriks yang di gunakan pada content based filtering adalah menggunakan precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
 
-$$Presisi = {TP \\over TP + FP}.$$
+$$ \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} $$
+
+$$ \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}} $$
+
+$$ \text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{True Positives} + \text{True Negatives} + \text{False Positives} + \text{False Negatives}} $$
+
+Dimana 
+
+True Positives (TP) = jumlah prediksi yang benar positif 
+False Positives (FP) = jumlah prediksi yang salah positif
+False Negatives (FN) = jumlah prediksi yang salah negatif
+True Negatives (TN) = jumlah prediksi yang benar negatif
+
+* Recall mengukur sejauh mana model atau sistem mampu mengidentifikasi keseluruhan jumlah data positif yang sebenarnya. Tujuan dari recall adalah untuk meminimalkan jumlah false negatives (data positif yang salah diklasifikasikan sebagai negatif).
+* Precision mengukur sejauh mana prediksi positif yang dibuat oleh model atau sistem adalah benar. Tujuan dari precision adalah untuk meminimalkan jumlah false positives (data negatif yang salah diklasifikasikan sebagai positif).
+* Accuracy mengukur sejauh mana model atau sistem mampu memberikan prediksi yang benar secara keseluruhan. Tujuan dari accuracy adalah untuk memberikan gambaran umum tentang seberapa baik model atau sistem dalam melakukan klasifikasi secara keseluruhan.
+* Hasil pada model adalah berhasil memprediksikan seluruhnya dengan benar dimana book author yang Dean R. Koontz dimana hasilnya sama dengan book author yang ada pada input sebelumnya.
+
+Sehingga apabila kita implementasikan pada rumus maka :
+
+Precision (Presisi):
+
+$$  \text{{Precision}} = \frac{{\text{{5}}}}{{\text{{5}} + \text{{0}}}} = \text{{1}} $$
+
+Recall (Recall):
+
+$$  \text{{Recall}} = \frac{{\text{{5}}}}{{\text{{5}} + \text{{0}}}} = \text{{1}}  $$
+
+Accuracy (Akurasi):
+
+$$  \text{{Accuracy}} = \frac{{\text{{5}} + \text{{0}}}}{{\text{{5}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}  $$
+
+* Sehingga dari hasil evaluasi model mendapatkan hasil dengan akurasi, precision dan recall sebesar 100% yang mana system bekerja sangat baik dalam memberikan rekomendasi buku
