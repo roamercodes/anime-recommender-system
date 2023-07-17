@@ -163,6 +163,19 @@ Tabel 5. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _model based
 
 Metode _content based filtering_ bekerja dengan menggunakan informasi profil preferensi pengguna terhadap item untuk dicari item yang mirip sebagai hasil rekomendasi. Salah satu pendekatan dalam membangun dengan metode ini dalah membuat profil pengguna dan item menggunakan konten yang telah diberi nilai. Pendekatan ini sebagian besar dirancang untuk merekomendasikan item berbasis teks, sehingga dapat berupa genre [5].
 
+Kelebihan dari metode dengan pendekatan _Content Based Filtering_ yaitu dapat memberikan rekomendasi konten atau item yang belum pernah dirating sekalipun, kekurangan metode ini adalah tidak dapat merekomendasikan konten atau item bagi pengguna baru yang belum pernah melakukan aktivitas apapun. Berikut hasil dari uji rekomendasi yang akan ditampilkan pada Tabel 6 dimana merupakan Top 7 anime rekomendasi.
+
+Tabel 6. Sampel hasil uji Top 7 Anime yang direkomendasikan dengan _content based filtering_
+
+| No. | name                                                    | genre                                                         |
+| --- | ------------------------------------------------------- | --------------------------------------------------------------|
+|  1  | 11eyes                                                  | Action, Ecchi, Super Power, Supernatural                      |
+|  2  | Seikon no Qwaser                                        | Action, Ecchi, Seinen, Super Power, Supernatural              |
+|  3  | Detective Conan Movie 18: The Sniper from Anot...       | Action, Mystery, Police, Shounen                              |
+|  4  | Boku dake ga Inai Machi                                 | Mystery, Psychological, Seinen, Supernatural                  |
+|  5  | Starship Operators                                      | Drama, Military, Sci-Fi, Space                                |
+|  6  | Rurouni Kenshin: Meiji Kenkaku Romantan                 | Action, Adventure, Comedy, Historical, Romance...             |
+|  7  | Noragami Aragoto                                        | Action, Adventure, Shounen, Supernatural                      |
 
 
 
