@@ -82,7 +82,7 @@ Karena alasan keakuratan rekomendasi maka akan dilakukan penyaringan pada kumpul
 
 ## Data Preparation
 
-Ada perbedaan pada data yang digunakam pada *collaboarative filtering* dan *content-based filtering*, pada *collaboarative filtering* membutuhkan fitur `anime_id` `name`, `user_id` dan `rating` dimana kedua file `csv` akan digunakan sedangkan pada *content-based filtering* dibutuhkan fitur `name`, `genre` dan hasil perhitungan `cosine similarity`.
+Ada perbedaan data yang digunakan pada  *item based collaboarative filtering*, *collaboarative filtering* dan *content-based filtering*. Pada *item based collaboarative filtering* digunakan fitur `user_id` `rating_x` dan `name` _(anime name)_ untuk menghitung skor kemiripan menggunakan _cosine similarity_. Pada *collaboarative filtering* membutuhkan fitur `anime_id`, `name`, `user_id` dan `rating_x` juga membutuhkan kumpulan data yang isinya hanya dengan anime saja untuk dilakukan kecocokan ketika ingin melakukan tes rekomendasi. Sedangkan pada *content-based filtering* dibutuhkan hasil perhitungan `cosine similarity` yang dimana telah dilakukan pada model *item based collaboarative filtering*.
 
 ### *Memory Based | Item Based Collaborative Filtering*
 
@@ -105,7 +105,7 @@ Tahapan pada persiapan data untuk _model based collaborative filtering)_ ialah:
 
 ### *Content-based Filtering*
 
-Pada perisiapan data untuk _content based filtering_ dibutuhkan hasil derajat kesamaan dengan teknik _cosine similarity_, karena sebelumnya pada model _IBCF_ juga menghitung _cosine similarity_ maka hasil tersebut akan digunakan juga pada model ini.
+Pada perisiapan data untuk _content based filtering_ dibutuhkan hasil derajat kesamaan dengan teknik _cosine similarity_, karena sebelumnya pada model _item based collaborative_ juga menghitung _cosine similarity_ maka hasil tersebut akan digunakan juga pada model ini.
 
 ## Modeling
 
@@ -205,7 +205,7 @@ dimana $\hat{y}$ merupakan rating prediksi _y_ merupakan rating aktual dan _n_ m
 
 Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
 
-Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan proses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jika merujuk pada hasil visualisasi _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
+Nilai selisih yang didapatkan antara nilai aktual dan prediksi yang dijumlahkan akan dikuadratkan kemudian hasil perjumlahan tersebut dibagi dengan data ke _n_ untuk menentukan nilai rata-ratanya. Operasi perhitungan akar terhadap nilai rata-rata dilakukan agar satuan nilai _RMSE_ prediksi sama dengan satuan nilai aktual, sehingga kemudian akan didapat nilai _RMSE_ yang mendekati nol. Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan proses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jika merujuk pada hasil visualisasi _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
 
 ### *Content Based Filtering*
 
