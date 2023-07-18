@@ -219,7 +219,7 @@ Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MAE_ sebesa
 
 | $$MAE = \sqrt {\frac{(3.279614, 3.136683) }{1} }$$ |
 | -------------------------------------------------- |
-| $$MAE = 0.158580$$                                 |
+| $$MAE = 0.1429$$                                   |
 
 ### *Model Based Collaborative Filtering*
 
