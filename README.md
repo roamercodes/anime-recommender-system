@@ -205,7 +205,7 @@ dimana $\hat{y}$ merupakan rating prediksi _y_ merupakan rating aktual dan _n_ m
 
 Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
 
-Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan prroses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jiika merujuk pada hasil visualisasi hasil _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
+Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan proses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jika merujuk pada hasil visualisasi _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
 
 ### *Content Based Filtering*
 
@@ -227,11 +227,6 @@ Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _r
 
 | $$Recall = \frac {TP} {TP + FN }$$ |
 | ---------------------------------- |
-  
-- F1-score adalah perbandingan sebuah rata-rata presisi dan recall.
-
-| $$F1 = \frac {2   x   Recall   x   Precision} { Recall + Precision }$$ |
-| ---------------------------------------------------------------------- |
 
 Apabila dilakukan implementasi maka :
 
@@ -242,13 +237,15 @@ _Precision_:
 
 _Recall_:
 
-| $$\text{{Recall}} = \frac{{\text{{5}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
+| $$\text{{Recall}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 _Accuracy_:
 
 | $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$  |
 | ----------------------------------------------------------------------------------------------------------------------------- |
+
+Berdasarkan hasil perhitungan diatas hasil dari _accuracy_, _precision_ dan _recall_ mendatkan nilai 1 dimana berarti sama dengan 100 atau dalam jika dalam persentase berarti 100%.
 
 ## Conclusion
 
