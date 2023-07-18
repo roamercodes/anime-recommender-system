@@ -177,7 +177,6 @@ Tabel 5. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _model based
 |  9  | Mononoke Hime                                           | Action, Adventure, Fantasy                                    |
 |  10 | Cowboy Bebop                                            | Action, Adventure, Comedy, Drama, Sci-Fi, Space               |
 
-
 ### *Content Based Filtering*
 
 Metode _content based filtering_ bekerja dengan menggunakan informasi profil preferensi pengguna terhadap item untuk dicari item yang mirip sebagai hasil rekomendasi. Salah satu pendekatan dalam membangun dengan metode ini dalah membuat profil pengguna dan item menggunakan konten yang telah diberi nilai. Pendekatan ini sebagian besar dirancang untuk merekomendasikan item berbasis teks, sehingga dapat berupa genre [5].
@@ -276,6 +275,10 @@ Berdasarkan hasil perhitungan diatas hasil dari _accuracy_, _precision_ dan _rec
 ## Conclusion
 
 Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem rekomendasi anime menggunakan 3 metode pendekatan yang berbeda. Pada model pertama yaitu _item based collaborative filtering_ mendapatkan nilai _MAE_ sebesar 0.1429 dan pada model yang kedua yaitu _model based collaborative filtering_ mendapatkan nilai _RMSE_ sebesar 0.2051 dan pada model yang terakhir yakni _content based filtering_ mendapatkan hasil akurasi 100%. Dari sedikit tinjauan tersebut maka dalam proyek ini dirasa telah mendapatkan hasil yang sesuai ekspetasi walaupun masih belum maksimal dalam proses pelatihan ataupun proses pemilihan dan penyaringan fitur.
+
+## Recommendations
+
+Saran yang dapat dipertimbangkan untuk proyek penelitian selanjutnya adalah mecoba menggunakan seluruh data dimana pada proyek ini masih banyak dilakukan pemangkasan data. Kemudian mencoba menyaring lagi fitur yang mungkin dapat meningkatkan kualitas data latih. Melakukan iterasi yang lebih banyak jika menggunakan metode seperti _model based collaborative filtering_ karena pada proyek ini hanya menggunakan 5 iterasi saja. Terakhir menerapkan pendekatan dengan metode _hybird_ misal _demographic filtering_ untuk merekomendasikan anime pada pengguna baru dan _model based_ untuk rekomendasi anime kepada pengguna secara _personalized_.
 
 ## Daftar Pustaka
 
