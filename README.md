@@ -117,11 +117,19 @@ Pendekatan dengan _item based collaborative filtering_ memberikan rekomendasi be
 
 Kelebihan _item based collaborative filtering_ ada;ah proses implementasi yang mudah, mudah menambahkan data-data baru tidak perlu menpertimbangkan content item yang direkomendasikan, skala yang baik dengan co-rated item sedangkan kekurangan _item based collaborative filtering_ adalah adalah algoritma ini bergantung pada rating dari pengguna, menurun-nya performa jika data jarang, skalabilitas yang terbatas pada dataset yang besar [3].
 
+Tahapan langkah implementasi metode _item based collaborative filtering_ :
+1. Membuat _user item matrix_
+2. Melakukan normalisasi data 
+3. Menerapkan _cosine similarity_
+4. Membuat tes rekomendasi
+
 Pada tahapan pertama setelah dilakukan persiapan pada data untuk model ini adalah membuat data menjadi format matriks _(user item matrix)_ dengan kolom matriks adalah pengguna baris matriks adalah anime dan isinya adalah rating. Kemudian dilakukan normalisasi pada data dengan mengurangkan nilai rata-rata setiap film. Kesamaan kosinus yang dihitung berdasarkan data yang dinormalisasi disebut _cosine similarity_ yang berpusat pada rata-rata. Setelah normalisasi, rating yang kurang dari rata-rata rating film mendapatkan nilai negatif, dan rating yang lebih dari rata-rata rating film mendapatkan nilai positif. Kemudian dilanjutkan dengan mengkalkulasi nilai skor kemiripan menggunakan metode _Pearson correlation_ [4]. Berikut ini adalah persamaan metode _pearson correlation similarity_:
 
 $$ sim(k,i) = \frac{\sum_{u = 1}^m {(R_{u, k}-\overline{R_{k}})} {(R_{u, l}-\overline{R_{l}})} } {\sqrt\sum_{u=1}^m (R_{u, k}-\overline{R_{k}})^{2} \sqrt\sum_{u=1}^m (R_{u, l}-\overline{R_{l}})^{2}} $$
 
-Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna. Hasil perhitungan _cosine similarity_ menjadi dasar dalam pemberian rekomendasi kepada pengguna.
+Dimana $sim(k,l)$ adalah nilai _similarity_ antara _item k_ dan _item_, $\overline{R_{k}}$ dan $\overline{R_{l}}$ adalah rating rata-rata pada _item k_ dan _item l_, $R_{u, k}$ dan $R_{u, l}$ adalah rating oleh pengguna _u_ kepada _item k_ dan _item l_ dan _m_ adalah jumlah total pengguna.
+
+Hasil perhitungan _cosine similarity_ menjadi dasar dalam pemberian rekomendasi kepada pengguna.
 Tabel 4 dibawah ini merupakan hasil uji terhadap pengguna dengan id 101, dimana ada 5 top rekomendasi anime yang telah diurutkan berdasarkan prediksi rating tertinggi.
 
 Tabel 4. Sampel hasil uji top 5 rekomendasi anime dengan _Item Based Collaborative Filtering_
@@ -136,8 +144,21 @@ Tabel 4. Sampel hasil uji top 5 rekomendasi anime dengan _Item Based Collaborati
 
 ### *Model Based Collaborative Filtering*
 
-Pada model dengan pendekatan _Collaborative Filtering_ lebih tepatnya _model based_ menggunakan arsitektur model _RecommenderNet_ yang dibangun menggunakan pustaka _TensorFlow_. Model ini menghitung skor kecocokan antara pengguna dan anime dengan teknik _embedding_, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_. Perbedaan pendekatan ini dengan content-based filtering adalah adanya pola preferensi pengguna yang dapat diprediksi, sehingga pengguna akan mendapatkan rekomendasi berdasarkan anime yang disukainya.
+Pada model dengan pendekatan _Collaborative Filtering_ lebih tepatnya pada _model based_ menggunakan arsitektur model _RecommenderNet_ yang dibangun menggunakan pustaka _TensorFlow_. Model ini menghitung skor kecocokan antara pengguna dan anime dengan teknik _embedding_, skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi _sigmoid_. Perbedaan pendekatan ini dengan content-based filtering adalah adanya pola preferensi pengguna yang dapat diprediksi, sehingga pengguna akan mendapatkan rekomendasi berdasarkan anime yang disukainya.
 Kelebihan dari Collaborative Filtering ini adalah kemampuannya dalam menemukan pola preferensi pelanggan yang kompleks dan merekomendasikan produk berdasarkan preferensi serupa dari pelanggan lain. Namun kekurangan dari pendekatan ini adalah adanya masalah jika pelanggan baru atau produk baru tidak memiliki cukup interaksi untuk memberikan rekomendasi yang akurat.
+
+Tahapan langkah implementasi metode _model based collaborative filtering_ :
+1. _Data preparation_
+   - Melakukan _encoding user_id_ dan _anime_id_
+   - Membagi data latih dan data validasi dengan rasio 80:20
+2. Membuat arsitektur model
+   - Menerapkan arsitektur model menggunakan _RecommenderNet_
+   - Menginisialisasikan model dengan 3 parameter yakni jumlah pengguna, jumlah anime dan jumlah _embedding_
+   - Meng-_compile_ model menggunakan _binary crossentropy_ untuk menghitung _loss_, _Adam (Adaptive Moment Estimation)_ sebagai _optimizer_, dan _root mean squared error (RMSE)_ sebagai metriks evaluasi. 
+4. Menginisialisasikan _callback_ teknik yang digunakan adalah _model check point_ dan memonitor _validation rmse_.
+5. Melakukan proses _training_ dengan 5 iterasi.
+6. Visualisasi hasil proses _training_.
+7. Membuat tes rekomendasi.
 
 Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah pengguna tonton dan diberi rating.
 
@@ -160,6 +181,11 @@ Tabel 5. Sampel hasil uji Top 10 Anime yang direkomendasikan dengan _model based
 ### *Content Based Filtering*
 
 Metode _content based filtering_ bekerja dengan menggunakan informasi profil preferensi pengguna terhadap item untuk dicari item yang mirip sebagai hasil rekomendasi. Salah satu pendekatan dalam membangun dengan metode ini dalah membuat profil pengguna dan item menggunakan konten yang telah diberi nilai. Pendekatan ini sebagian besar dirancang untuk merekomendasikan item berbasis teks, sehingga dapat berupa genre [5].
+
+Tahapan langkah implementasi metode _content based filtering_ :
+1. Mendatkan hasil _cosine similarity_
+2. Membuat _dataframe_ berdasarkan perhitungan _cosine similarty_
+3. Membuat tes rekomendasi
 
 Kelebihan dari metode dengan pendekatan _Content Based Filtering_ yaitu dapat memberikan rekomendasi konten atau item yang belum pernah dirating sekalipun, kekurangan metode ini adalah tidak dapat merekomendasikan konten atau item bagi pengguna baru yang belum pernah melakukan aktivitas apapun. Berikut hasil dari uji rekomendasi yang akan ditampilkan pada Tabel 6 dimana merupakan Top 10 anime rekomendasi [6].
 
