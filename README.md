@@ -236,7 +236,6 @@ Contoh perhitungan :
 | --------------------------------------------------------------------------------------------------------- |
 | $$RMSE = 0.158580$$                                                                                       |
 
-
 ![RMSE PLOT](https://github.com/roamercodes/anime-recommender-system/assets/22432578/67a86cde-49df-42bb-bc40-6ddbbab14ffc)
 
 Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
