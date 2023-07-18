@@ -226,6 +226,12 @@ Pada pendekatan dengan metode ini metriks evaluasi yang di gunakan ialah _RMSE (
 
 dimana $\hat{y}$ merupakan rating prediksi _y_ merupakan rating aktual dan _n_ merupakan jumlah data.
 
+Contoh perhitungan :
+
+| $$RMSE = \sqrt {\frac{(0.392827, 0.212526)^2 + (0.283836, 0.489392)^2 + (0.961220, 0.987328)^2 }{3} }$$ |
+| --------------------------------------------------------------------- |
+
+
 ![RMSE PLOT](https://github.com/roamercodes/anime-recommender-system/assets/22432578/67a86cde-49df-42bb-bc40-6ddbbab14ffc)
 
 Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
