@@ -5,22 +5,18 @@
 Hiburan di era digital kian melambung pesat, ada banyak sekali jenis hiburan yang ada didunia digital dan juga dapat menambah wawasan [1] salah satunya anime. Anime menjadi tontonan yang memiliki banyak peminat diseluruh dunia. Pada saat ini banyak platform-platform menyediakan anime untuk dikonsumsi oleh para penggemar anime, seperti Netflix, Amazon Prime, Bstation dsb. Pekembangan animme begitu sangat cepat, sehingga judul anime yang telah rilis sangatlah banyak dan cukup sulit untuk mencari anime yang sesuai dengan personalisasi setiap penggemar.
 Dari permasalahan kesulitan menemukan anime yang sesuai dengan personalisasi penonton maka pada penelitian ini akan digunakan sistem rekomendasi sebagai solusi permasalahan tersebut. Ada beberapa pendekatan yang ada pada _Recommendation System_ yaitu Content Based Filtering_ dan _Collaborative Filtering_, pada penelitan ini akan digunakan kedua metode tersebut untuk membuat sistem rekomendasi anime.
 
-gambar 1. proyek cover
-
 ![mashup_anime_collage_by_dinocojv-d8af5lu](https://github.com/roamercodes/anime-recommender-system/assets/22432578/9ca8c2dd-5f01-414c-85b1-d5eb0e97e4bf)
 
 ## Business Understanding
 
 ### Problem Statements
 
-- Bagaimana membuat model sistem rekomendasi anime ?
 - Bagaimana merekomendasikan anime berdasarkan personalisasi penonton ?
 - Bagaimana merekomendasikan anime berdasarkan kontent anime ?
 - Bagaimana cara membuat sistem rekomendasi anime yang dapat memberikan rekomendasi yang relevan ?
 
 ### Goals
 
-- Menghasilkan sistem rekomendasi anime.
 - Menggunakan pendekatan _Collaborative Filtering_ yakni _memory based_ dan _model based_.
 - Menggunakan pendekatan _Content Based Filtering_ untuk merekomendasikan anime kepada penonton dengan membuat sistem rekomendasi *anime*.
 - Membuat model sistem rekomendasi anime yang dapat merekomendasikan *anime* yang relevan.
@@ -61,16 +57,20 @@ Pada tahap _EDA_ pertama akan dilakukan _Univariate analysis_ dimana analisis un
 Kita akan mengeksplorasi kumpulan data pada masing-masing variable yang penting dan akan digunakan untuk pelatihan nanti.
 
 Tabel 3. jumlah fitur yang akan digunakan
-| Fitur    | Jumlah | Keterangan |
-| -------- | ------ | ---------- |
-| anime    | 12.294 | total anime |
-| users    | 73.515 | total pengguna |
-| rating   | 11     | 11 jenis rating |
-| genre    | 6      | 6 jenis genre |
+| Fitur    | Jumlah | Keterangan        |
+| -------- | ------ | ----------------- |
+| anime    | 12.294 | total anime       |
+| users    | 73.515 | total pengguna    |
+| rating   | 10     | 10 jenis rating   |
+| genre    | 3264   | jumlah unik genre | 
+
+Berdasarkan Tabel 3 dapat diketahui dari kumpulan data total jumlah anime adalah sebanyak 12.294, 73.515 pengguna, 3.264 genre dan 10 jenis rating dimana rating berkisar antara 1 hingga 10. Data pada Tabel 3 tersebut merupakan fitur yang dibutuhkan ketika ingin membangun sistem rekomendasi.
 
 ![image](https://github.com/roamercodes/anime-recommender-system/assets/22432578/8d4c47fb-e206-43f8-bba1-83005d8d6e2c)
 
 Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv 
+
+Visualisasi perseberan data anime Gambar 1 diatas berdasarkan tipe-tipe penayangan yang ada pada kumpulan data _anime.csv_ dapat diketahui bawah data anime terbanyak urutan pertama berdasarkan tipe penayangan ialah anime dengan tipe penayangan TV yang kedua adalah OVA disusul Movie, Special dan terakhir adalah music.
 
 ## Data Preprocessing
 
@@ -78,7 +78,7 @@ Gambar 1. Sebaran data fitur _type_ pada dataset anime.csv
 
 Data yang berisi nilai kosong (_missing value_) atau data _outlier_ (nilai diluar normal) akan berakibat buruk pada proses pemodelan, maka dari itu perlu dilakukan penanganan terhadap data tersebut. Pada fitur `rating` tepatnya pada data `anime_rating.csv` terdapat _outlier_ yakni terdapat nilai `-1` dari _outlier_ tersebut akan diganti kan `NaN value` dengan menggunakan `built-in` _function_ dari _Numpy_ yaitu `np.Nan` maka semua data yang bernilai `-1` akan digantikan.
 
-Karena alasan keakuratan rekomendasi maka akan dilakukan penyaringan pada kumpulan data, berdasarkan Gambar 1 diketahui bahwa 3 teratas anime terbanyak ada pada tipe penayangan `TV` disusul `Ova` dan `Movie`, hanya ada dua tipe penayangan yang akan diambil yakni `TV` dan `Movie`, selain dari segi kumpulan data anime terbanyak isi konten juga perlu diperhatikan, walaupun `OVA` ada pada peringkat 2 terbanyak tetapi tipe `OVA` bukan bagian dari inti alur cerita anime `OVA` dipublikasikan dengan tujuan untuk memperjelas alur cerita [2]. Dengan proses penyaringan ini juga dapat mengurangi biaya komputasi yang cukup besar (nga percaya? coba sendiri!!). 
+Karena alasan keakuratan rekomendasi maka akan dilakukan penyaringan pada kumpulan data, berdasarkan Gambar 1 diketahui bahwa 3 teratas anime terbanyak ada pada tipe penayangan `TV` disusul `Ova` dan `Movie`, hanya ada dua tipe penayangan yang akan diambil yakni `TV` dan `Movie`, selain dari segi kumpulan data anime terbanyak isi konten juga perlu diperhatikan, walaupun `OVA` ada pada peringkat 2 terbanyak tetapi tipe `OVA` bukan bagian dari inti alur cerita anime `OVA` dipublikasikan dengan tujuan untuk memperjelas alur cerita [2]. Dengan proses penyaringan ini juga dapat mengurangi biaya komputasi yang cukup besar. 
 
 ## Data Preparation
 
