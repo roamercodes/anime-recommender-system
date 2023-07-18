@@ -217,9 +217,9 @@ Dimana $P_{u, k}$ adalah Prediksi rating pengguna _u_ untuk _item k_, $R_{u, k}$
 Disini akan mencoba mengevaluasi terhadap user yang telah menonton sebuah anime dan melihat hasi prediksi ratingnya. Berdasarkan hasil uji pada tabel 4 yang menggunakan id pengguna yaitu `101` bahwa pengguna tersebut telah menonton dan merating anime `Naruto` dengan rating 3.279614 kemudian hasil skor kemiripan yang didapat adalah 1.000000 dan mendapatkan hasil prediksi rating yakni 3.136683.
 Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MAE_ sebesar 0.1429.
 
-| $$MAE = \sqrt {\frac{(0.392827, 0.212526)^2 + (0.283836, 0.489392)^2 + (0.961220, 0.987328)^2 }{3} }$$   |
-| --------------------------------------------------------------------------------------------------------- |
-| $$MAE = 0.158580$$                                                                                       |
+| $$MAE = \sqrt {\frac{(3.279614, 3.136683) }{1} }$$ |
+| -------------------------------------------------- |
+| $$MAE = 0.158580$$                                 |
 
 ### *Model Based Collaborative Filtering*
 
