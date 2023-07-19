@@ -293,12 +293,12 @@ _Precision_:
 
 _Recall_:
 
-| $$\text{{Recall}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
+| $$\text{{Recall}} = \frac{{\text{{7}}}}{{\text{{7}} + \text{{0}}}} = \text{{1}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 _Accuracy_:
 
-| $$\text{{Accuracy}} = \frac{{\text{{7}} + \text{{0}}}}{{\text{{0}} + \text{{0}} + \text{{3}} + \text{{0}}}} = \text{{7}}$$  |
+| $$\text{{Accuracy}} = \frac{{\text{{7}} + \text{{0}}}}{{\text{{0}} + \text{{3}} + \text{{0}} + \text{{0}}}} = \text{{7}}$$  |
 | ----------------------------------------------------------------------------------------------------------------------------- |
 
 Berdasarkan hasil perhitungan diatas hasil dari _accuracy_, _precision_ dan _recall_ mendatkan nilai 1 dimana berarti sama dengan 100 atau dalam jika dalam persentase berarti 100%.
