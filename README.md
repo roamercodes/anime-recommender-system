@@ -244,15 +244,16 @@ Nilai selisih yang didapatkan antara nilai aktual dan prediksi yang dijumlahkan 
 
 ### *Content Based Filtering*
 
-Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini. Pada Tabel 5 merupakan hasil rekomendasi dari _content based filtering_ dimana ada 10 Top-N anime rekomendasi dengan input anime seperti pada Tabel 7 dibawah, tingkat 
+Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini. Pada Tabel 5 merupakan hasil rekomendasi dari _content based filtering_ dimana ada 10 Top-N anime rekomendasi dengan input anime seperti pada Tabel 7 dibawah, tingkat keberhasilan rekomendasi akan dikatakan _correct_ jika ada setidaknya 1 kategori genre yang ada pada genre masukan anime. 
 
 Tabel 7 Tes Masukan Anime Untuk _Conten Based Filtering_
 | No. | name                                                    | genre                                             | 
 | --- | ------------------------------------------------------- | ------------------------------------------------- |
 |  1  | Hunter X Hunter (2011)                                  | Action, Adventure, Shounen, Super Power          	|
 
+Tabel 8 Perbandingan genre masukan dan rekomendasi
 
-| No. | name                                              | genre                                             | Genre Input                             | Hasil Rekomendasi |
+| No. | name                                              | genre                                             | genre input                             | hasil rekomendasi |
 | --- | ------------------------------------------------- | ------------------------------------------------- | --------------------------------------- | ----------------- |
 |  1  | Wagamama☆Fairy Mirumo de Pon!                     | Adventure, Comedy, Drama, Fantasy, Kids, Magic...	| Action, Adventure, Shounen, Super Power | Correct           |
 |  2  | Denki-gai no Honya-san                            | Comedy, Seinen, Slice of Life                     | Action, Adventure, Shounen, Super Power | Uncorrect         |
@@ -265,7 +266,7 @@ Tabel 7 Tes Masukan Anime Untuk _Conten Based Filtering_
 |  9  | Konjiki no Gash Bell!!: Mecha Vulkan no Raishuu   | Adventure, Shounen, Supernatural                  | Action, Adventure, Shounen, Super Power | Correct           |
 |  10 | Robin Hood no Daibouken                           | Adventure, Historical, Romance                    | Action, Adventure, Shounen, Super Power | Correct           |
 
-
+Pada Tabel 8 dapat diketahui bahwa dari 10 hasil rekomendasi yang terdata benar atau _correct_ sebanyak 7 dan dari 10 hasil rekomendasi yang terdata salah atau _uncorrect_ sebanyak 3.
 Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _recall_ dan _accuracy_ yang dapat dihitung dengan menggunakan rumus seperti dibawah ini :
 
 - Akurasi adalah hasil prediksi yang benar dari keseluruhan data uji.
@@ -287,7 +288,7 @@ Apabila dilakukan implementasi maka :
 
 _Precision_:
 
-| $$\text{{Precision}} = \frac{{\text{{7}}}}{{\text{{}7} + \text{{3}}}} = \text{{0,7}}$$ |
+| $$\text{{Precision}} = \frac{{\text{{7}}}}{{\text{{7}} + \text{{3}}}} = \text{{0,7}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 _Recall_:
@@ -297,7 +298,7 @@ _Recall_:
 
 _Accuracy_:
 
-| $$\text{{Accuracy}} = \frac{{\text{{10}} + \text{{0}}}}{{\text{{10}} + \text{{0}} + \text{{0}} + \text{{0}}}} = \text{{1}}$$  |
+| $$\text{{Accuracy}} = \frac{{\text{{7}} + \text{{0}}}}{{\text{{0}} + \text{{0}} + \text{{3}} + \text{{0}}}} = \text{{7}}$$  |
 | ----------------------------------------------------------------------------------------------------------------------------- |
 
 Berdasarkan hasil perhitungan diatas hasil dari _accuracy_, _precision_ dan _recall_ mendatkan nilai 1 dimana berarti sama dengan 100 atau dalam jika dalam persentase berarti 100%.
