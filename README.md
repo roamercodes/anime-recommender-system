@@ -301,11 +301,11 @@ _Accuracy_:
 | $$\text{{Accuracy}} = \frac{{\text{{7}} + \text{{0}}}}{{\text{{0}} + \text{{3}} + \text{{0}} + \text{{0}}}} = \text{{7}}$$  |
 | ----------------------------------------------------------------------------------------------------------------------------- |
 
-Berdasarkan hasil perhitungan diatas hasil dari _accuracy_, _precision_ dan _recall_ mendatkan nilai 1 dimana berarti sama dengan 100 atau dalam jika dalam persentase berarti 100%.
+Berdasarkan hasil perhitungan diatas hasil dari _precision_ mendapatkan 70%, _recall_ mendatkan 100% dan _accuracy_ mendapatkan 70%.
 
 ## Conclusion
 
-Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem rekomendasi anime menggunakan 3 metode pendekatan yang berbeda. Pada model pertama yaitu _item based collaborative filtering_ mendapatkan nilai _MAE_ sebesar 0.1429 dan pada model yang kedua yaitu _model based collaborative filtering_ mendapatkan nilai _RMSE_ sebesar 0.2051 dan pada model yang terakhir yakni _content based filtering_ mendapatkan hasil akurasi 100%. Dari sedikit tinjauan tersebut maka dalam proyek ini dirasa telah mendapatkan hasil yang sesuai ekspetasi walaupun masih belum maksimal dalam proses pelatihan ataupun proses pemilihan dan penyaringan fitur.
+Sesuai dengan apa yang dijelaskan pada tujuan proyek ini yaitu membuat sistem rekomendasi anime menggunakan 3 metode pendekatan yang berbeda. Pada model pertama yaitu _item based collaborative filtering_ mendapatkan nilai _MAE_ sebesar 0.1429 dan pada model yang kedua yaitu _model based collaborative filtering_ mendapatkan nilai _RMSE_ sebesar 0.2051 dan pada model yang terakhir yakni _content based filtering_ mendapatkan hasil _precision_ mendapatkan 70%, _recall_ mendatkan 100% dan _accuracy_ mendapatkan 70%. Dari sedikit tinjauan tersebut maka dalam proyek ini dirasa telah mendapatkan hasil yang sesuai ekspetasi walaupun masih belum maksimal dalam proses pelatihan ataupun proses pemilihan dan penyaringan fitur.
 
 ## Recommendations
 
