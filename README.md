@@ -244,7 +244,28 @@ Nilai selisih yang didapatkan antara nilai aktual dan prediksi yang dijumlahkan 
 
 ### *Content Based Filtering*
 
-Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini 
+Pada pendekatan ini untuk metriks evaluasi yang di gunakan adalah precision, recall dan accuracy yang dapat dihitung dengan menggunakan rumus seperti dibawah ini. Pada Tabel 5 merupakan hasil rekomendasi dari _content based filtering_ dimana ada 10 Top-N anime rekomendasi dengan input anime seperti pada Tabel 7 dibawah, tingkat 
+
+Tabel 7 Tes Masukan Anime Untuk _Conten Based Filtering_
+| No. | name                                                    | genre                                             | 
+| --- | ------------------------------------------------------- | ------------------------------------------------- |
+|  1  | Hunter X Hunter (2011)                                  | Action, Adventure, Shounen, Super Power          	|
+
+
+| No. | name                                              | genre                                             | Genre Input                             | Hasil Rekomendasi |
+| --- | ------------------------------------------------- | ------------------------------------------------- | --------------------------------------- | ----------------- |
+|  1  | Wagamama☆Fairy Mirumo de Pon!                     | Adventure, Comedy, Drama, Fantasy, Kids, Magic...	| Action, Adventure, Shounen, Super Power | Correct           |
+|  2  | Denki-gai no Honya-san                            | Comedy, Seinen, Slice of Life                     | Action, Adventure, Shounen, Super Power | Uncorrect         |
+|  3  | Durarara!!                                        | Action, Mystery, Supernatural                     | Action, Adventure, Shounen, Super Power | Correct           |
+|  4  | Witch Craft Works                                 | Action, Fantasy, Magic, Seinen, Supernatural	     | Action, Adventure, Shounen, Super Power | Correct           |
+|  5  | Persona 3 the Movie 2: Midsummer Knight&#039;s...	| Action, Fantasy, Seinen, Supernatural             | Action, Adventure, Shounen, Super Power | Correct           |
+|  6  | xxxHOLiC Kei                                      | Comedy, Drama, Mystery, Psychological, Superna... | Action, Adventure, Shounen, Super Power | Uncorrect         |
+|  7  | Ike! Ina-chuu Takkyuubu                           | Comedy, Ecchi, School, Sports                     | Action, Adventure, Shounen, Super Power | Uncorrect         |
+|  8  | Toaru Majutsu no Index: Endymion no Kiseki	       | Action, Magic, Sci-Fi, Super Power                | Action, Adventure, Shounen, Super Power | Correct           |
+|  9  | Konjiki no Gash Bell!!: Mecha Vulkan no Raishuu   | Adventure, Shounen, Supernatural                  | Action, Adventure, Shounen, Super Power | Correct           |
+|  10 | Robin Hood no Daibouken                           | Adventure, Historical, Romance                    | Action, Adventure, Shounen, Super Power | Correct           |
+
+
 
 Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _recall_ dan _accuracy_ yang dapat dihitung dengan menggunakan rumus seperti dibawah ini :
 
@@ -267,7 +288,7 @@ Apabila dilakukan implementasi maka :
 
 _Precision_:
 
-| $$\text{{Precision}} = \frac{{\text{{10}}}}{{\text{{10}} + \text{{0}}}} = \text{{1}}$$ |
+| $$\text{{Precision}} = \frac{{\text{{7}}}}{{\text{{}7} + \text{{3}}}} = \text{{4}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 _Recall_:
