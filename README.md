@@ -266,7 +266,6 @@ Tabel 7 Tes Masukan Anime Untuk _Conten Based Filtering_
 |  10 | Robin Hood no Daibouken                           | Adventure, Historical, Romance                    | Action, Adventure, Shounen, Super Power | Correct           |
 
 
-
 Pada pendekatan ini untuk metriks evaluasi yang di gunakan yaitu _precision_, _recall_ dan _accuracy_ yang dapat dihitung dengan menggunakan rumus seperti dibawah ini :
 
 - Akurasi adalah hasil prediksi yang benar dari keseluruhan data uji.
@@ -288,7 +287,7 @@ Apabila dilakukan implementasi maka :
 
 _Precision_:
 
-| $$\text{{Precision}} = \frac{{\text{{7}}}}{{\text{{}7} + \text{{3}}}} = \text{{4}}$$ |
+| $$\text{{Precision}} = \frac{{\text{{7}}}}{{\text{{}7} + \text{{3}}}} = \text{{0,7}}$$ |
 | -------------------------------------------------------------------------------------- |
 
 _Recall_:
