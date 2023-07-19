@@ -221,6 +221,8 @@ Maka dari hasil tersebut bahwa bisa diketahui bahwa diperoleh hasil _MAE_ sebesa
 | -------------------------------------------------- |
 | $$MAE = 0.1429$$                                   |
 
+MAE sebesar 0.1429 berarti rata-rata kesalahan absolut antara rekomendasi yang diberikan oleh model dan preferensi sebenarnya dari pengguna adalah 0.1429. Semakin mendekati nol, semakin akurat model dalam memberikan rekomendasi.
+
 ### *Model Based Collaborative Filtering*
 
 Pada pendekatan dengan metode ini metriks evaluasi yang di gunakan ialah _RMSE (Root Mean Squared Error)_. _Error_ diperoleh berdasarkan nilai selisih antara hasil prediksi item terhadap data. Hasil dari perhitungan _RMSE_ terkecil berarti baik, semakin kecil nilai _RMSE_ yang di dapat maka kualitas akurasi rekomendasi semakin baik [7].
@@ -241,6 +243,7 @@ Contoh perhitungan :
 Gambar 3. Visualisasi hasil metriks _RMSE_ pada _model based collaborative filtering_
 
 Nilai selisih yang didapatkan antara nilai aktual dan prediksi yang dijumlahkan akan dikuadratkan kemudian hasil perjumlahan tersebut dibagi dengan data ke _n_ untuk menentukan nilai rata-ratanya. Operasi perhitungan akar terhadap nilai rata-rata dilakukan agar satuan nilai _RMSE_ prediksi sama dengan satuan nilai aktual, sehingga kemudian akan didapat nilai _RMSE_ yang mendekati nol. Hasil _RMSE_ pada penelitian ini mendapatkan nilai sebesar 0.2051 dengan proses iterasi pelatihan _(training)_ dilakukan sebanyak 5 _epoch_ walaupun sebenarnya dapat ditingkatkan lagi jika merujuk pada hasil visualisasi _RMSE_ yang cenderung masih turun, namun karena keterbatasan komputasi proses pelatihan hanya mampu di 5 iterasi. 
+RMSE sebesar 0.2051 berarti rata-rata kesalahan prediksi model dalam mengukur preferensi pengguna adalah 0.2051 yang berarti juga nilai tersebut sudah cukup baik untuk mendekati nol.
 
 ### *Content Based Filtering*
 
